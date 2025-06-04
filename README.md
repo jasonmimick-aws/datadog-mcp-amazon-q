@@ -1,4 +1,4 @@
-# Amazon Q with Datadog Integration Demo Script
+# Amazon Q with Datadog MCP Integration Demo Script
 
 *A guide for AWS specialists demonstrating to customers*
 
