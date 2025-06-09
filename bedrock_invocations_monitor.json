@@ -1,0 +1,24 @@
+{
+  "name": "Bedrock Invocations Above Threshold",
+  "type": "query alert",
+  "query": "sum(last_5m):sum:aws.bedrock.dataautomation.invocations{*}.as_rate() > 5",
+  "message": "Bedrock invocations have exceeded the threshold of 5 per minute.\n\nPlease investigate the increased usage of Amazon Bedrock services.\n\n@slack-datadog-alerts",
+  "tags": [
+    "service:bedrock",
+    "alert:invocation_rate",
+    "team:ai-ml"
+  ],
+  "options": {
+    "thresholds": {
+      "critical": 5
+    },
+    "notify_audit": true,
+    "require_full_window": false,
+    "notify_no_data": false,
+    "renotify_interval": 0,
+    "include_tags": true,
+    "evaluation_delay": 60,
+    "new_host_delay": 300,
+    "silenced": {}
+  }
+}
